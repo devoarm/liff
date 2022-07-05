@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+  <title>My LIFF app</title>
+  <link rel="stylesheet" href="css/style.css" media="all">
+</head>
+<body>
+
+  <!-- <script src="js/vconsole.min.js"></script> -->
+  <!-- <script>
+    var vConsole = new VConsole()
+    console.log("Hello World!")
+  </script> -->
+
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <script>
+    function createUniversalLink() {
+    }
+
+    async function shareMsg() {
+    }
+
+    function logOut() {
+    }
+
+    function closed() {
+    }
+
+    async function scanCode() {
+    }
+
+    function openWindow() {
+    }
+
+    async function getFriendship() {
+    }
+
+    async function sendMsg() {
+    }
+
+    function getContext() {
+    }
+
+    async function getUserProfile() {
+      const profile = await liff.getProfile()
+      profile.getElementById('pictureUrl').src = profile.pictureUrl
+      profile.getElementById('userId').append(profile.userId)
+      profile.getElementById('statusMessage').append(profile.statusMessage)
+      profile.getElementById('displayName').append(profile.displayName)
+    }
+
+    function getEnvironment() {
+      document.getElementById('os').append(liff.getOS())
+      document.getElementById('language').append(liff.getLanguage())
+      document.getElementById('version').append(liff.getVersion())
+      document.getElementById('accessToken').append(liff.getAccessToken())
+      document.getElementById('isInClient').append(liff.isInClient())
+      if (liff.isInClient()) {
+          document.getElementById('btnLogOut').style.display = 'none'
+      } else {
+        document.getElementById('btnMsg').style.display = 'none'
+        document.getElementById('btnScanCode').style.display = 'none'
+        document.getElementById('btnClose').style.display = 'none'
+      }
+
+    }
+
+    async function main() {      
+      await liff.init({ liffId: "1657272372-yJqLdnmB" })
+      getEnvironment()
+      getUserProfile()
+      // getContext()
+      // getFriendship()
+      // createUniversalLink()
+    }
+    main()
+  </script>
+</body>
+</html>
