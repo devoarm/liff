@@ -6,23 +6,32 @@
       name="viewport"
       content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover"
     />
-    <title>My LIFF app</title>
-    <link rel="stylesheet" href="../css/style.css" media="all" />
+    <title>ระบบคิวโรงพยาบาลอรัญประเทศ</title>    
   </head>
-  <body>   
+  <body>
     <p id="scanCode"><b>Code:</b></p>
-    
-    <button id="btnScanCode" onclick="scanCode()">Scan Code</button>
+
+    <button id="btnScanCode" class="btn-primary" onclick="scanCode()">แสกน QRCODE บัตรคิว</button>
     <!-- <script src="js/vconsole.min.js"></script> -->
     <!-- <script>
     var vConsole = new VConsole()
     console.log("Hello World!")
   </script> -->
-
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-    <script>            
+    <script>
       function logOut() {
-        liff.logout()
+        liff.logout();
         window.location.reload();
       }
       function closed() {
@@ -38,18 +47,17 @@
                 type: "text",
                 text: result.value,
               },
-            ]);                        
+            ]);
           }
         } catch (error) {
           console.log("scanCodeV2", error);
-        }        
+        }
       }
       async function main() {
         await liff.init({ liffId: "1657272372-yJqLdnmB" });
-        if (liff.isLoggedIn()) {          
-            scanCode();
-        } else{
-          liff.login(); 
+        if (liff.isLoggedIn()) {
+        } else {
+          liff.login();
         }
         // getContext()
         // getFriendship()
